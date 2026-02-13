@@ -78,3 +78,11 @@ function typeEffect() {
 typeEffect();
 
 setInterval(changeQuote, 4000);
+
+document.querySelectorAll(".window").forEach(window => {
+
+    window.addEventListener("click", () => {
+        window.classList.toggle("open");
+    });
+
+});

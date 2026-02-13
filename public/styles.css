@@ -128,8 +128,8 @@ button:hover {
 
 .hero-photo {
     margin: 25px auto;
-    width: 180px;
-    height: 180px;
+    width: 280px;
+    height: 280px;
     border-radius: 50%;
     overflow: hidden;
     box-shadow:
@@ -216,4 +216,247 @@ button:hover {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* memory section */
+
+#memory {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+/* window frame */
+
+/* window frame */
+
+.window {
+    width: 260px;
+    height: 320px;
+    margin: 40px auto;
+    background: #ff9bb3;
+    border-radius: 14px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+/* center divider */
+
+.window::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 4px;
+    height: 100%;
+    background: #ff5c8a;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+/* shutters */
+
+.shutter {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background: #ff5c8a;
+    transition: transform 0.8s ease;
+    z-index: 2;
+
+    /* fake slats */
+    background-image: repeating-linear-gradient(
+        to bottom,
+        #ff5c8a 0px,
+        #ff5c8a 8px,
+        #ff7aa3 8px,
+        #ff7aa3 12px
+    );
+}
+
+.left {
+    left: 0;
+}
+
+.right {
+    right: 0;
+}
+
+
+/* memory inside */
+
+.memory-content {
+    position: absolute;
+    inset: 0;
+    background: white;
+    padding: 12px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    overflow: auto;
+}
+
+.memory-content p {
+    font-size: 0.9rem;
+    color: #8a004f;
+}
+
+
+.memory-content img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* open state */
+
+.window.open .left {
+    transform: translateX(-100%);
+}
+
+.window.open .right {
+    transform: translateX(100%);
+}
+
+.window.open .memory-content {
+    opacity: 1;
+}
+.window-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* responsive */
+
+@media (max-width: 900px) {
+    .window-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+#memory {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+/* stack memories vertically */
+
+.memory-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* memory panel */
+
+.memory-card {
+    display: flex;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+
+    border: 3px solid #ff5c8a;
+
+    box-shadow:
+        0 0 12px rgba(255, 0, 120, 0.4),
+        0 0 25px rgba(255, 0, 120, 0.2);
+
+    transition: transform 0.3s;
+}
+
+.memory-card:hover {
+    transform: scale(1.02);
+}
+
+/* image */
+
+.memory-card img {
+    width: 50%;
+    height: 320px;
+    object-fit: cover;
+}
+
+/* text */
+
+.memory-card p {
+    width: 50%;
+    padding: 24px;
+    color: #8a004f;
+    font-size: 1.1rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+
+    .memory-card {
+        flex-direction: column;
+    }
+
+    .memory-card img,
+    .memory-card p {
+        width: 100%;
+    }
+
+}
+
+#penguin {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.penguin-card {
+    display: flex;
+    gap: 30px;
+    max-width: 1100px;
+    margin: auto;
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+
+    border: 3px solid #ff5c8a;
+
+    box-shadow:
+        0 0 12px rgba(255,0,120,0.4),
+        0 0 25px rgba(255,0,120,0.2);
+}
+
+.penguin-card img {
+    width: 260px;
+    height: auto;
+    object-fit: contain;
+}
+
+.penguin-text {
+    text-align: left;
+    color: #8a004f;
+}
+
+.penguin-text h3 {
+    margin-top: 15px;
+}
+
+.penguin-text p {
+    line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+
+    .penguin-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .penguin-text {
+        text-align: center;
+    }
+
 }
