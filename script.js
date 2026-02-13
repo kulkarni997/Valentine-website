@@ -33,13 +33,13 @@ function createHeart() {
 setInterval(createHeart, 400);
 
 const quotes = [
-"You don’t try to be special — still you’re my favourite part of the day.",
+"You don't try to be special — still you're my favourite part of the day.",
 "Your smile fixes moods you never broke.",
 "Being with you never feels like effort.",
 "Some people give attention. You give peace.",
-"You didn’t become important suddenly — it just happened.",
+"You didn't become important suddenly — it just happened.",
 "Even silence feels complete with you.",
-"I don’t wait for plans… I wait for you.",
+"I don't wait for plans… I wait for you.",
 "You stay real, even on bad days."
 ];
 
